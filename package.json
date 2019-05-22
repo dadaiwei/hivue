@@ -78,7 +78,7 @@
   "private": false,
   "scripts": {
     "build": "vue-cli-service build",
-    "lib": "vue-cli-service build --target lib --name hivue --dest lib packages/index.js",
+    "lib": "vue-cli-service build --target lib --name hivue --dest lib packages/index.js && npm run theme",
     "lint": "vue-cli-service lint",
     "serve": "vue-cli-service serve",
     "theme": "gulp default"
