@@ -1,33 +1,26 @@
 {
-  "_from": "hivue",
-  "_id": "hivue@0.0.6",
-  "_inBundle": false,
-  "_integrity": "sha512-LH3FKn91ygGzwQ/BZD3KKtf7G0S0+aNhHtP3OnWkJI60VEaJ0zO2k0O9lJjIFYl8vdnN7AQVniXTY/sQbYVK+g==",
-  "_location": "/hivue",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "hivue",
-    "name": "hivue",
-    "escapedName": "hivue",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
+  "name": "hivue",
+  "version": "0.0.6",
+  "private": false,
+  "description": "A Component Library for vue.js",
+  "main": "lib/hivue.umd.min.js",
+  "scripts": {
+    "build": "vue-cli-service build",
+    "lib": "vue-cli-service build --target lib --name hivue --dest lib packages/index.js && npm run theme",
+    "lint": "vue-cli-service lint",
+    "serve": "vue-cli-service serve",
+    "theme": "gulp default"
   },
-  "_requiredBy": [
-    "#USER",
-    "/"
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dadaiwei/hivue.git"
+  },
+  "homepage": "",
+  "keywords": [
+    "hivue",
+    "vue",
+    "components"
   ],
-  "_resolved": "https://registry.npmjs.org/hivue/-/hivue-0.0.5.tgz",
-  "_shasum": "68e6b58a65b6105277e8790cfe15c0ccdfec7913",
-  "_spec": "hivue",
-  "_where": "D:\\",
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ],
-  "bundleDependencies": false,
   "dependencies": {
     "babel-plugin-component": "^1.1.1",
     "chalk": "^2.4.2",
@@ -39,8 +32,6 @@
     "gulp-sass": "^4.0.2",
     "vue": "^2.6.10"
   },
-  "deprecated": false,
-  "description": "## Project setup ``` npm install ```",
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.7.0",
     "@vue/cli-plugin-eslint": "^3.7.0",
@@ -68,20 +59,9 @@
       "parser": "babel-eslint"
     }
   },
-  "main": "lib/hivue.umd.min.js",
-  "name": "hivue",
   "postcss": {
     "plugins": {
       "autoprefixer": {}
     }
-  },
-  "private": false,
-  "scripts": {
-    "build": "vue-cli-service build",
-    "lib": "vue-cli-service build --target lib --name hivue --dest lib packages/index.js && npm run theme",
-    "lint": "vue-cli-service lint",
-    "serve": "vue-cli-service serve",
-    "theme": "gulp default"
-  },
-  "version": "0.0.5"
+  }
 }

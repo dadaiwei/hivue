@@ -31,7 +31,7 @@ export {
 }
 
 export default {
-  version: '0.0.3',
+  version: '0.0.7',
   install,
   HCol,
   HRow,
