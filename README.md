@@ -1,6 +1,7 @@
 # hivue
 
 github：https://github.com/dadaiwei/hivue.git
+<br>
 npm: https://www.npmjs.com/package/hivue
 
 ## 安装
