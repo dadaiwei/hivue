@@ -1,13 +1,16 @@
 import Vue from 'vue'
 import App from './App.vue'
-import { HButton, HProgress } from '../lib/hivue.common'
+import vueHighlightJs from 'vue-highlightjs'
+import hivue from '../lib/hivue.umd.min'
 import '../lib/theme/index.css'
-
-Vue.use(HButton);
-Vue.use(HProgress);
+import './css/cover.scss'
+import router from './router/index';
 
 Vue.config.productionTip = false
+Vue.use(hivue);
+Vue.use(vueHighlightJs);
 
 new Vue({
+  router,
   render: h => h(App),
 }).$mount('#app')

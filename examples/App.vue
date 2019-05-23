@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-    <h-button>按钮</h-button>
-    <h-progress :show-text="true" :ratio="0.4"></h-progress>
-    <div>
-      <span class="iconfont icon-subnode"></span>
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -14,13 +10,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width: 100%;
+  height: 100%;
 }
 </style>
