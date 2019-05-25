@@ -1,4 +1,6 @@
-# <center> ![logo](./static/white-logo.png) </center>
+<p align="center">
+  <img width="200" src="./static/white-logo.png">
+</p>
 <br>
 一个基于Vue CLI 3.0，Babel7，VUE2.6封装的VUE-UI组件库，支持定制主题和扩充组件库。
 <br>
