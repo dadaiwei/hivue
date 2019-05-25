@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="200" src="./static/white-logo.png">
+  <img width="200" alt="hivue" src="./static/white-logo.png">
 </p>
 <div align="center">
 
