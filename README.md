@@ -3,7 +3,7 @@
 </p>
 <div align="center">
 
-一个基于Vue CLI 3.0，Babel7，VUE2.6封装的VUE-UI组件库，支持定制主题和扩充组件库。
+一个基于Vue Cli 3.0，Babel7，Vue2.6封装的Vue-UI组件库，支持定制主题和扩充组件库。
 
 [![npm version](https://img.shields.io/badge/npm-0.0.7-blue.svg)](https://www.npmjs.com/package/hivue) [![npm downloads](https://img.shields.io/badge/downloads-49%2Fmonth-brightgreen.svg)](https://npm-stat.com/charts.html?package=hivue) [![npm build](https://img.shields.io/badge/build-passing-brightgreen.svg)]() [![licence](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/dadaiwei/hivue/blob/master/LICENSE) [![gzip js](https://img.shields.io/badge/gzip%20size%3AJS-16KB-brightgreen.svg)]() [![gzip css](https://img.shields.io/badge/gzip%20sizeCSS-92KB-brightgreen.svg)]()
 </div>
