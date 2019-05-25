@@ -1,6 +1,6 @@
 {
   "name": "hivue",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "private": false,
   "description": "A Component Library for vue.js",
   "main": "lib/hivue.umd.min.js",

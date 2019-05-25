@@ -1,4 +1,5 @@
-![logo](./static/white-logo.png)
+# <center> ![logo](./static/white-logo.png) </center>
+<br>
 一个基于Vue CLI 3.0，Babel7，VUE2.6封装的VUE-UI组件库，支持定制主题和扩充组件库。
 <br>
 [![npm version](https://img.shields.io/badge/npm-0.0.7-blue.svg)](https://www.npmjs.com/package/hivue)
