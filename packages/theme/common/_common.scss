@@ -1,0 +1,22 @@
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+  -moz-user-select: $select;
+  -ms-user-select: $select;
+  user-select: $select;
+}
+
+@mixin tab-focus() {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+  box-shadow: $shadow;
+}
+
+@mixin opacity($opacity) {
+  $opacity-ie: ($opacity * 100); // IE8 filter
+  filter: alpha(opacity=$opacity-ie);
+  opacity: $opacity;
+}

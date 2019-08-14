@@ -4,7 +4,7 @@
  * @Author: Dadaiwei
  * @Date: 2018-12-10 18:33:29
  * @LastEditor: Dadaiwei
- * @LastEditTime: 2019-05-21 09:50:25
+ * @LastEditTime: 2019-08-06 11:58:48
  -->
 <template>
   <button
@@ -39,13 +39,12 @@ export default {
       required: false,
       default: "default"
     },
-     size: {
-      // 尺寸，mini/small/medium/big
+    size: {
+      // 尺寸，mini/small/large
       type: String,
-      required: false,
-      default: "medium"
+      required: false
     },
-     disabled: {
+    disabled: {
       // 禁用
       type: Boolean,
       required: false,
@@ -57,7 +56,7 @@ export default {
       required: false,
       default: false
     },
-     active: {
+    active: {
       // 激活状态
       type: Boolean,
       required: false,
@@ -84,7 +83,7 @@ export default {
       // 原生类型，button/submit/reset
       type: String,
       required: false,
-      default: 'button'
+      default: "button"
     }
   },
   data() {

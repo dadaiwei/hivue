@@ -1,0 +1,122 @@
+// transition
+$all-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
+$fade-transition: opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
+$fade-linear-transition: opacity 200ms linear !default;
+$md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1),
+opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
+$border-transition-base: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
+$color-transition-base: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
+
+// color
+$white: #ffffff !default;
+$black: #000000 !default;
+$color-primary: #1890ff !default;
+$color-info: #5bc0de !default;
+$color-success: #5cb85c !default;
+$color-warning: #f0ad4e !default;
+$color-danger: #d9534f !default;
+
+$color-primary-light: mix($white, $color-primary, 80%) !default;
+$color-info-light: mix($white, $color-info, 80%) !default;
+$color-success-light: mix($white, $color-success, 80%) !default;
+$color-warning-light: mix($white, $color-warning, 80%) !default;
+$color-dange-light: mix($white, $color-danger, 80%) !default;
+
+// background
+$component-bg: #ffffff !default;
+$background-color-light: hsl(0, 0, 98%) !default;
+$background-color-base: hsl(0, 0, 96%);
+
+// text
+$text-primary-color: #333333 !default;
+$text-disabled-color: #bbbbbb !default;
+
+// link
+$link-color: $color-primary;
+$link-hover-color: darken($link-color, 15%) !default;
+
+// font
+$font-family-sans-serif: "Helvetica Neue",
+Helvetica,
+Arial,
+sans-serif !default;
+$font-family-serif: Georgia,
+"Times New Roman",
+Times,
+serif !default;
+$font-family-monospace: Menlo,
+Monaco,
+Consolas,
+"Courier New",
+monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+
+$font-size-base: 14px !default;
+$font-size-large: 16px !default;
+$font-size-small: 12px !default;
+
+// line-height
+$line-height-base: 1.499 !default;
+$line-height-large: 1.3333333 !default;
+$line-height-small: 1.5 !default;
+
+// padding
+$padding-base-vertical: 6px !default;
+$padding-base-horizontal: 12px !default;
+$padding-large-vertical: 10px !default;
+$padding-large-horizontal: 16px !default;
+$padding-small-vertical: 5px !default;
+$padding-small-horizontal: 10px !default;
+
+// z-index
+$index-normal: 1 !default;
+$index-top: 1000 !default;
+
+// border
+$border-color-base: hsl(0, 0, 85%) !default;
+$border-style-base: solid !default;
+$border-width-base: 1px !default;
+$border-radius-base: 4px !default;
+$border-radius-large: 6px !default;
+$border-radius-small: 3px !default;
+$border-radius-circle: 100% !default;
+$border-radius-none: 0 !default;
+
+// box-shadow
+$--box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12),
+0 0 6px rgba(0, 0, 0, .04) !default;
+$--box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12),
+0 0 6px rgba(0, 0, 0, .12) !default;
+$--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
+
+// disabled
+$disabled-bg-base: #f5f5f5 !default;
+$disabled-border-base: #d9d9d9 !default;
+
+// cursor
+$cursor-disabled: not-allowed !default;
+
+// button
+$btn-default-color: $text-primary-color !default;
+$btn-default-bg: $component-bg !default;
+$btn-default-border: $border-color-base !default;
+
+$btn-paimary-color: $white !default;
+$btn-primary-bg: $color-primary !default;
+$btn-primary-border: darken($btn-primary-bg, 5%) !default;
+
+$btn-info-color: $white !default;
+$btn-info-bg: $color-info !default;
+$btn-info-border: darken($btn-info-bg, 5%) !default;
+
+$btn-success-color: $white !default;
+$btn-success-bg: $color-success !default;
+$btn-success-border: darken($btn-success-bg, 5%) !default;
+
+$btn-warning-color: $white !default;
+$btn-warning-bg: $color-warning !default;
+$btn-warning-border: darken($btn-warning-bg, 5%) !default;
+
+$btn-danger-color: $white !default;
+$btn-danger-bg: $color-danger !default;
+$btn-danger-border: darken($btn-danger-bg, 5%) !default;

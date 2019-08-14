@@ -1,34 +1,41 @@
+/*
+ * @Author: dadaiwei
+ * @Date: 2019-05-22 10:27:17
+ * @LastEditors: dadaiwei
+ * @LastEditTime: 2019-08-09 09:51:27
+ * @Description:
+ * @Copyright: 绿湾网络科技有限公司
+ */
 module.exports = {
   pages: {
     index: {
-      entry: 'examples/main.js',
-      template: 'public/index.html',
-      filename: 'index.html'
+      entry: "examples/main.js",
+      template: "examples/index.html",
+      filename: "index.html"
     }
   },
 
   // 扩展 webpack 配置，使 packages 加入编译
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     config.module
-      .rule('js')
-      .include
-      .add('/packages')
+      .rule("js")
+      .include.add("/packages")
       .end()
-      .use('babel')
-      .loader('babel-loader')
-      .tap(options => {
+      .use("babel")
+      .loader("babel-loader")
+      .tap((options) => {
         // 修改它的选项...
-        return options
-      })
+        return options;
+      });
   },
 
   css: {
     extract: false
   },
 
-  publicPath: './',
-  outputDir: 'docs',
+  publicPath: "./",
+  outputDir: "docs",
   runtimeCompiler: undefined,
   productionSourceMap: undefined,
   parallel: undefined
-}
+};

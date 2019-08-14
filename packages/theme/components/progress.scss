@@ -1,0 +1,63 @@
+.progress-bar {
+  display: flex;
+}
+.progress-outer-bar {
+  position: relative;
+  border-radius: 2px;
+  background-color: #f5f5f5;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.progress-inner-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  border-radius: 2px;
+  background-color: #5bc0de;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+}
+.progress-inner-bar-normal {
+  background-color: #5bc0de;
+}
+.progress-inner-bar-success {
+  background-color: #5cb85c;
+}
+.progress-inner-bar-warning {
+  background-color: #f0ad4e;
+}
+.progress-inner-bar-danger {
+  background-color: #d9534f;
+}
+.progress-inner-bar-striped {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 40px 40px;
+}
+@keyframes progress-bar-active {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+.progress-inner-bar.active {
+  animation: progress-bar-active 2s linear infinite;
+}
+.inside-text, .outside-text {
+  font-size: 12px;
+  color: #404040;
+}
+.inside-text {
+  position: absolute;
+  right: 2px;
+  top: 0;
+  z-index: 2;
+}
+.outside-text {
+  margin-left: 5px;
+}

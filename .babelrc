@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    ["component", 
+      {
+         "libraryName": "hiv-ui"
+      }
+    ]
+  ]
+}
