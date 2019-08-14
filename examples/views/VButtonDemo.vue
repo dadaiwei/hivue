@@ -72,48 +72,19 @@ export default {
           parameter: "type",
           explain: "设置按钮类型",
           dataTypes: "String",
-          optionalValues:
-            "default / primary / success / dashed / dotted / danger / warning / customize",
+          optionalValues: "default / primary / success / danger / warning ",
           defaultValue: "default"
         },
         {
-          parameter: "animation",
-          explain: "是否开启点击动画效果",
-          dataTypes: "Boolean",
-          optionalValues: "true/false",
-          defaultValue: "true"
+          parameter: "size",
+          explain: "设置按钮大小",
+          dataTypes: "String",
+          optionalValues: "small / medium / large ",
+          defaultValue: "medium"
         },
         {
           parameter: "disabled",
           explain: "是否禁用按钮",
-          dataTypes: "Boolean",
-          optionalValues: "true/false",
-          defaultValue: "false"
-        },
-        {
-          parameter: "circle",
-          explain: "是否圆形按钮",
-          dataTypes: "Boolean",
-          optionalValues: "true/false",
-          defaultValue: "false"
-        },
-        {
-          parameter: "shn",
-          explain: "图标类名",
-          dataTypes: "String",
-          optionalValues: "",
-          defaultValue: ""
-        },
-        {
-          parameter: "color",
-          explain: "自定义按钮颜色，必须将按钮类型设置为customize",
-          dataTypes: "String",
-          optionalValues: "",
-          defaultValue: ""
-        },
-        {
-          parameter: "block",
-          explain: "将按钮宽度调整为其父宽度的选项",
           dataTypes: "Boolean",
           optionalValues: "true/false",
           defaultValue: "false"
