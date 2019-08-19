@@ -15,6 +15,8 @@
           <h-button type="info">Info</h-button>
           <h-button type="success">Success</h-button>
           <h-button type="danger">Danger</h-button>
+          <h-button type="dashed">dashed</h-button>
+          <h-button type="link">link</h-button>
         </div>
       </template>
       <template v-slot:code>
@@ -24,8 +26,8 @@
     <v-demo-block :height="160" title="大小" id="button-size">
       <template v-slot:demo>
         <div>
-          <h-button>Default</h-button>
           <h-button size="small">Small</h-button>
+          <h-button>Default</h-button>
           <h-button size="large">Large</h-button>
         </div>
       </template>
@@ -61,8 +63,8 @@ export default {
       size: {
         code: `
         <div>
-          <h-button>Default</h-button>
           <h-button size="small">Small</h-button>
+          <h-button>Default</h-button>
           <h-button size="large">Large</h-button>
         </div>  
         `

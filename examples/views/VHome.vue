@@ -81,7 +81,7 @@ export default {
       overflow: auto;
     }
     .content {
-      margin: 0 200px 0 240px;
+      margin: 0 100px 0 240px;
       width: 100%;
     }
   }
