@@ -13,9 +13,9 @@
   -ms-user-select: none;
   user-select: none;
   background-image: none;
-  border: 1px solid transparent;
+  border: 1px solid $border-color-base;
+  background-color: $white;
   @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
-  @include button-varient($btn-default-bg, $btn-default-border, $btn-default-color);
   @include user-select(none);
 
   &:active,
@@ -30,14 +30,13 @@
   &:hover,
   &:focus,
   &.focus {
-    color: $btn-default-color;
+    @include button-active;
     text-decoration: none;
   }
 
   &:active,
   &.active {
-    background-image: none;
-    @include box-shadow(inset 0 3px 5px rgba(0, 0, 0, .125));
+    @include button-active;
   }
 
   &.disabled,
@@ -46,7 +45,6 @@
     cursor: $cursor-disabled;
     @include opacity(.65);
     @include box-shadow(none);
-    pointer-events: none;
   }
 }
 
@@ -72,6 +70,26 @@
 
 .h-button-dashed {
   border-style: $border-style-dashed;
+}
+
+.h-button-link {
+  color: $color-primary;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  box-shadow: none;
+
+
+  &:focus {
+    @extend .h-button-link;
+    color: #886dd9;
+  }
+
+  &:hover,
+  &:active {
+    @extend .h-button-link;
+    color: $color-primary;
+  }
 }
 
 .h-button-large {
