@@ -9,23 +9,24 @@
 <template>
   <button
     class="h-button"
-    :disabled="disabled && !loading"
+    :disabled="disabled && loading"
     :autofocus="autofocus"
     :type="nativeType"
     :class="[
               type ? 'h-button-' + type : '',
               size ? 'h-button-' + size : '',
+              shape? 'h-button-' + shape : '',
               {
-                'disabled': disabled,
                 'loading': loading,
-                'round': round,
                 'active': active
               }]"
     @click="handleClick"
   >
     <i v-if="loading && type !== 'text'" class="iconfont icon-loading h-button-loading"></i>
-    <i v-if="icon && !loading" :class="icon" class="h-button-icon"></i>
-    <slot></slot>
+    <i v-if="icon && !loading" :class="['iconfont', 'icon-' + icon]" class="h-button-icon"></i>
+    <span v-if="$slots.default">
+      <slot></slot>
+    </span>
   </button>
 </template>
 
@@ -62,11 +63,11 @@ export default {
       required: false,
       default: false
     },
-    round: {
-      // 圆形
-      type: Boolean,
+    shape: {
+      // 按钮形状，circle/round
+      type: String,
       required: false,
-      default: false
+      default: ""
     },
     autofocus: {
       // 自动聚焦

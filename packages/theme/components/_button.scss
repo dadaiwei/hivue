@@ -1,5 +1,6 @@
 .h-button {
   outline: #ffffff none 0 !important;
+  box-sizing: border-box;
   display: inline-block;
   margin: 0 8px 12px 0;
   text-align: center;
@@ -15,7 +16,7 @@
   background-image: none;
   border: 1px solid $border-color-base;
   background-color: $white;
-  @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
+  @include button-size(0, $padding-base-horizontal, $font-size-base, $btn-height-base, $border-radius-base);
   @include user-select(none);
 
   &:active,
@@ -39,12 +40,48 @@
     @include button-active;
   }
 
-  &.disabled,
-  &[disabled],
-  fieldset[disabled] & {
+  &[disabled] {
+    color: $disabled-color-base;
+
+    &:hover {
+      color: $disabled-color-base;
+    }
+
     cursor: $cursor-disabled;
     @include opacity(.65);
     @include box-shadow(none);
+  }
+
+  &.loading {
+    cursor: default;
+  }
+
+  &.h-button-round {
+    border-radius: $border-radius-base;
+  }
+
+  &.h-button-circle {
+    padding: 0;
+    height: $btn-height-base;
+    min-width: $btn-height-base;
+    border-radius: 50%;
+
+    .iconfont {
+      font-size: $font-size-base;
+    }
+  }
+}
+
+.h-button-default {
+
+  &[disabled] {
+    border: $disabled-border-style;
+    background-color: $disabled-bg-base;
+
+    &:hover {
+      border: $disabled-border-base;
+      border: $disabled-border-style;
+    }
   }
 }
 
@@ -70,6 +107,12 @@
 
 .h-button-dashed {
   border-style: $border-style-dashed;
+
+  &[disabled] {
+    &:hover {
+      border-color: $disabled-border-base;
+    }
+  }
 }
 
 .h-button-link {
@@ -90,27 +133,69 @@
     @extend .h-button-link;
     color: $color-primary;
   }
-}
 
-.h-button-large {
-  @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
+  &[disabled] {
+    background-color: transparent;
+    border-color: none;
+    cursor: not-allowed;
+  }
 }
 
 .h-button-small {
-  @include button-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small);
+  &.h-button-round {
+    border-radius: $border-radius-small;
+  }
+
+  &.h-button-circle {
+    height: $btn-height-small;
+    min-width: $btn-height-small;
+
+    .iconfont {
+      font-size: $font-size-small;
+    }
+  }
+
+  @include button-size(0, $padding-small-horizontal, $font-size-small, $btn-height-small, $border-radius-small);
+}
+
+.h-button-large {
+  &.h-button-round {
+    border-radius: $border-radius-large;
+  }
+
+  &.h-button-circle {
+    .iconfont {
+      font-size: $font-size-large;
+    }
+
+    height: $btn-height-large;
+    min-width: $btn-height-large;
+  }
+
+  @include button-size(0, $padding-large-horizontal, $font-size-large, $btn-height-large, $border-radius-large);
 }
 
 .h-button-loading {
-  cursor: $cursor-disabled;
-  animation: rotating 2s linear infinite;
+  display: inline-block;
+  animation: rotating 1s infinite linear;
+
+  &+span {
+    margin-left: 8px;
+  }
+}
+
+.h-button-icon {
+  &+span {
+    margin-left: 8px;
+  }
 }
 
 @keyframes rotating {
-  0% {
+  from {
     transform: rotate(0deg);
   }
 
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }

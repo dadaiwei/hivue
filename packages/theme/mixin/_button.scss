@@ -40,10 +40,11 @@
   }
 }
 
-@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $height, $border-radius) {
   padding: $padding-vertical $padding-horizontal;
   font-size: $font-size;
-  line-height: $line-height;
+  height: $height;
+  line-height: 1;
   border-radius: $border-radius;
 }
 
