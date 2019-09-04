@@ -13,6 +13,15 @@ export default new VueRouter({
       }
     },
     {
+      path: "/theme-custom",
+      name: "theme-custom"
+    },
+    {
+      path: "/change-log",
+      name: "/change-log",
+      component: () => import("../views/ChangeLog")
+    },
+    {
       path: "/installation",
       name: "installation",
       component: () => import("../views/Installation")
@@ -21,6 +30,11 @@ export default new VueRouter({
       path: "/components/button",
       name: "button",
       component: () => import("../views/VButtonDemo")
+    },
+    {
+      path: "/components/icon",
+      name: "icon",
+      component: () => import("../views/Icon")
     }
   ]
 });

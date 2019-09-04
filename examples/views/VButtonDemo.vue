@@ -6,6 +6,9 @@
       <v-anchor-link href="button-simple" title="基础用法" />
       <v-anchor-link href="button-size" title="大小" />
       <v-anchor-link href="button-disabled" title="禁用" />
+      <v-anchor-link href="button-loading" title="loading" />
+      <v-anchor-link href="button-shape" title="形状" />
+      <v-anchor-link href="button-icon" title="icon" />
       <v-anchor-link href="api" title="API" />
     </v-anchor>
     <v-demo-block :height="260" title="基础用法" id="button-simple">
@@ -58,6 +61,52 @@
       </template>
       <template v-slot:code>
         <code class="html">{{fCode(disabled.code)}}</code>
+      </template>
+    </v-demo-block>
+    <v-demo-block :height="260" title="loading" id="button-loading">
+      <template v-slot:demo>
+        <div>
+          <h-button loading>Default</h-button>
+          <h-button type="primary" loading>Primary</h-button>
+          <h-button type="info" loading>Info</h-button>
+          <h-button type="success" loading>Success</h-button>
+          <h-button type="warning" loading>Warning</h-button>
+          <h-button type="danger" loading>Danger</h-button>
+          <h-button type="dashed" loading>Dashed</h-button>
+        </div>
+      </template>
+      <template v-slot:code>
+        <code class="html">{{fCode(loading.code)}}</code>
+      </template>
+    </v-demo-block>
+    <v-demo-block :height="260" title="形状" id="button-shape">
+      <template v-slot:demo>
+        <div>
+          <h-button size="small" shape="round">Default</h-button>
+          <h-button size="medium" shape="round">Default</h-button>
+          <h-button type="large" shape="round">Default</h-button>
+          <h-button type="primary" size="small" shape="circle" loading></h-button>
+          <h-button type="primary" size="medium" shape="circle" loading></h-button>
+          <h-button type="primary" size="large" shape="circle" loading></h-button>
+        </div>
+      </template>
+      <template v-slot:code>
+        <code class="html">{{fCode(shape.code)}}</code>
+      </template>
+    </v-demo-block>
+    <v-demo-block :height="260" title="icon" id="button-icon">
+      <template v-slot:demo>
+        <div>
+          <h-button icon="left">Default</h-button>
+          <h-button icon="right">Default</h-button>
+          <h-button icon="up">Default</h-button>
+          <h-button type="primary" icon="arrowleft">Primary</h-button>
+          <h-button type="primary" icon="arrowright">Primary</h-button>
+          <h-button type="primary" icon="arrowup">Primary</h-button>
+        </div>
+      </template>
+      <template v-slot:code>
+        <code class="html">{{fCode(icon.code)}}</code>
       </template>
     </v-demo-block>
     <!-- API -->
@@ -116,11 +165,48 @@ export default {
         </div>
         `
       },
+      loading: {
+        code: `
+        <div>
+          <h-button loading>Default</h-button>
+          <h-button type="primary" loading>Primary</h-button>
+          <h-button type="info" loading>Info</h-button>
+          <h-button type="success" loading>Success</h-button>
+          <h-button type="warning" loading>Warning</h-button>
+          <h-button type="danger" loading>Danger</h-button>
+          <h-button type="dashed" loading>Dashed</h-button>
+        </div>
+        `
+      },
+      shape: {
+        code: `
+        <div>
+          <h-button size="small" shape="round">Default</h-button>
+          <h-button size="medium" shape="round">Default</h-button>
+          <h-button type="large" shape="round">Default</h-button>
+          <h-button type="primary" size="small" shape="circle" loading></h-button>
+          <h-button type="primary" size="medium" shape="circle" loading></h-button>
+          <h-button type="primary" size="large" shape="circle" loading></h-button>
+        </div>
+        `
+      },
+      icon: {
+        code: `
+        <div>
+          <h-button icon="left">Default</h-button>
+          <h-button icon="right">Default</h-button>
+          <h-button icon="up">Default</h-button>
+          <h-button type="primary" icon="arrowleft">Primary</h-button>
+          <h-button type="primary" icon="arrowright">Primary</h-button>
+          <h-button type="primary" icon="arrowup">Primary</h-button>
+        </div>
+        `
+      },
       api: [
         {
           parameter: "type",
           explain: "设置按钮类型",
-          dataTypes: "String",
+          dataTypes: "string",
           optionalValues:
             "default / primary / info / success / warning / danger / dashed / link ",
           defaultValue: "default"
@@ -128,16 +214,37 @@ export default {
         {
           parameter: "size",
           explain: "设置按钮大小",
-          dataTypes: "String",
+          dataTypes: "string",
           optionalValues: "small / medium / large ",
           defaultValue: "medium"
         },
         {
           parameter: "disabled",
           explain: "是否禁用按钮",
-          dataTypes: "Boolean",
-          optionalValues: "true/false",
+          dataTypes: "boolean",
+          optionalValues: "true / false",
           defaultValue: "false"
+        },
+        {
+          parameter: "loading",
+          explain: "按钮加载状态",
+          dataTypes: "boolean",
+          optionalValues: "true / false",
+          defaultValue: "false"
+        },
+        {
+          parameter: "shape",
+          explain: "按钮形状",
+          dataTypes: "string",
+          optionalValues: "round / circle",
+          defaultValue: "-"
+        },
+        {
+          parameter: "icon",
+          explain: "按钮图标",
+          dataTypes: "string",
+          optionalValues: "-",
+          defaultValue: "-"
         }
       ]
     };
