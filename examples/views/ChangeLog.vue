@@ -56,6 +56,7 @@ export default {
     height: 10px;
     border-radius: 100%;
     border: 2px solid #1890ff;
+    background-color: #ffffff;
     &:after {
       width: 6px;
       height: 10px;

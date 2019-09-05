@@ -131,6 +131,13 @@ a:link {
         color: #1f2f3d;
     }
 
+    .demo-sub-title {
+        font-size: 20px;
+        line-height: 2;
+        font-weight: 400;
+        color: #1f2f3d;
+    }
+
     .demo-introduction {
         font-size: 14px;
         color: #5e6d82;
@@ -205,6 +212,10 @@ a:link {
         margin-bottom: 25px;
         border-radius: 4px;
         -webkit-font-smoothing: auto;
+
+        p {
+            color: #ce9178;
+        }
     }
 
     .demo-code-en-p {

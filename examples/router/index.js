@@ -14,7 +14,8 @@ export default new VueRouter({
     },
     {
       path: "/theme-custom",
-      name: "theme-custom"
+      name: "theme-custom",
+      component: () => import("../views/ThemeCustom")
     },
     {
       path: "/change-log",
@@ -29,12 +30,12 @@ export default new VueRouter({
     {
       path: "/components/button",
       name: "button",
-      component: () => import("../views/VButtonDemo")
+      component: () => import("../views/components/commmon/VButtonDemo")
     },
     {
       path: "/components/icon",
       name: "icon",
-      component: () => import("../views/Icon")
+      component: () => import("../views/components/commmon/Icon")
     }
   ]
 });
