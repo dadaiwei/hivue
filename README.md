@@ -12,7 +12,7 @@
 ## 安装
 
 ```
-npm i hivue -S
+npm install hivue --save-dev
 ```
 
 ## 使用
