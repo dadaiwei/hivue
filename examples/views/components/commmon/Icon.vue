@@ -126,7 +126,6 @@ export default {
         "icon-plus"
       ],
       iconList: [
-        "icon-check-circle",
         "icon-CI",
         "icon-Dollar",
         "icon-compass",

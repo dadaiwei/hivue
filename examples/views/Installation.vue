@@ -33,13 +33,14 @@
         target="_blank"
       >https://www.npmjs.com/package/hivue</a>
     </p>
-    <div class="demo-code-block">npm i hivue -S</div>
+    <div class="demo-code-block">npm install hivue --save-dev</div>
 
     <!-- 快速上手 -->
     <h3 class="demo-table-title">快速上手</h3>
     <p class="demo-introduction">你可以在 main.js 中引入整个 hivue。</p>
     <div class="demo-code-block">
-      <p>import hivue from 'hivue'</p>
+      <p>import hivue from 'hivue';</p>
+      <p>import 'hivue/lib/theme/index.css';</p>
       <p style="margin-top:20px">Vue.use(hivue);</p>
     </div>
 
