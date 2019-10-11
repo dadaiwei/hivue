@@ -20,7 +20,7 @@
 <script>
 export default {
   name: "ChangeLog",
-  data() {
+  data () {
     return {
       logs: [
         {
@@ -32,6 +32,14 @@ export default {
             {
               description: "上传Icon demo"
             }
+          ]
+        },
+        {
+          time: "2019-10-11",
+          contents: [
+            {
+              description: "完成栅格布局组件"
+            },
           ]
         }
       ]

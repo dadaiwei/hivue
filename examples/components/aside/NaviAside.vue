@@ -2,7 +2,7 @@
  * @Author: dadaiwei
  * @Date: 2019-06-06 21:01:24
  * @LastEditors: dadaiwei
- * @LastEditTime: 2019-08-09 10:43:45
+ * @LastEditTime: 2019-10-10 19:02:15
  * @Description: 
  * @Copyright: 绿湾网络科技有限公司
  -->
@@ -35,7 +35,7 @@ export default {
     }
   },
   watch: {
-    "$route.path": function(newValue, oldValue) {
+    "$route.path": function(newValue) {
       this.resetAllNaviItems();
       this.setMatchedListActive(newValue);
     }
