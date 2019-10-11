@@ -3,7 +3,7 @@ $all-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
 $fade-transition: opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
 $fade-linear-transition: opacity 200ms linear !default;
 $md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1),
-opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
+    opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
 $border-transition-base: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
 $color-transition-base: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
 
@@ -37,19 +37,9 @@ $link-color: $color-primary;
 $link-hover-color: darken($link-color, 15%) !default;
 
 // font
-$font-family-sans-serif: "Helvetica Neue",
-Helvetica,
-Arial,
-sans-serif !default;
-$font-family-serif: Georgia,
-"Times New Roman",
-Times,
-serif !default;
-$font-family-monospace: Menlo,
-Monaco,
-Consolas,
-"Courier New",
-monospace !default;
+$font-family-sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$font-family-serif: Georgia, 'Times New Roman', Times, serif !default;
+$font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace !default;
 $font-family-base: $font-family-sans-serif !default;
 
 $font-size-base: 14px !default;
@@ -85,10 +75,8 @@ $border-radius-circle: 100% !default;
 $border-radius-none: 0 !default;
 
 // box-shadow
-$box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12),
-0 0 6px rgba(0, 0, 0, .04) !default;
-$box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12),
-0 0 6px rgba(0, 0, 0, .12) !default;
+$box-shadow-base: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04) !default;
+$box-shadow-dark: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.12) !default;
 $box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
 
 // disabled
@@ -128,3 +116,26 @@ $btn-danger-border: darken($btn-danger-bg, 5%) !default;
 $btn-height-small: 22px !default;
 $btn-height-base: 32px !default;
 $btn-height-large: 40px !default;
+
+$media-sm: 768px !default;
+$media-md: 992px !default;
+$media-lg: 1220px !default;
+$media-xl: 1920px !default;
+
+$break-points: (
+    'xs': (
+        max-width: $media-sm - 1,
+    ),
+    'sm': (
+        min-width: $media-sm,
+    ),
+    'md': (
+        min-width: $media-md,
+    ),
+    'lg': (
+        min-width: $media-lg,
+    ),
+    'xl': (
+        min-width: $media-xl,
+    ),
+);
