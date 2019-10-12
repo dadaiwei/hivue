@@ -7,6 +7,7 @@
       <v-anchor-link href="grid-gutter" title="分栏间隔" />
       <v-anchor-link href="grid-offset" title="分栏偏移" />
       <v-anchor-link href="grid-justify" title="对齐方式" />
+      <v-anchor-link href="grid-responsive" title="响应式布局" />
       <v-anchor-link href="api" title="API" />
     </v-anchor>
     <v-demo-block :height="150" title="基础用法" id="grid-simple">
@@ -98,7 +99,7 @@
         <code class="html">{{fCode(justify.code)}}</code>
       </template>
     </v-demo-block>
-    <v-demo-block :height="630" title="响应式布局" id="grid-responsive">
+    <v-demo-block :height="170" title="响应式布局" id="grid-responsive">
       <template v-slot:demo>
         <h-row class="row-demo">
           <h-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1" class="col-demo"></h-col>
@@ -106,9 +107,18 @@
           <h-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1" class="col-demo"></h-col>
         </h-row>
       </template>
+      <template slot="code">
+        <code class="html">{{fCode(responsive.code)}}</code>
+      </template>
     </v-demo-block>
+    <!-- API -->
     <div id="api">
       <h3 class="demo-table-title">API</h3>
+      <P class="demo-table-introduction">属性说明如下：</P>
+      <h4>Row</h4>
+      <v-api-table :data="rowApi" />
+      <h4 class="aditional-api">Col</h4>
+      <v-api-table :data="colApi" />
     </div>
   </div>
 </template>
@@ -190,7 +200,124 @@ export default {
           </h-row>
         </div>
         `
-      }
+      },
+      responsive: {
+        code: `
+         <h-row>
+          <h-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"></h-col>
+          <h-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"></h-col>
+          <h-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"></h-col>
+        </h-row>
+        `
+      },
+      rowApi: [
+        {
+          parameter: "gutter",
+          explain: "设置分栏间隔",
+          dataTypes: "number",
+          optionalValues:
+            "-",
+          defaultValue: "0"
+        },
+        {
+          parameter: "type",
+          explain: "布局模式，可选flex",
+          dataTypes: "string",
+          optionalValues:
+            "flex",
+          defaultValue: "-"
+        },
+        {
+          parameter: "justify",
+          explain: "flex 布局下的水平排列方式",
+          dataTypes: "string",
+          optionalValues:
+            "start/end/center/space-around/space-between/space-evenly",
+          defaultValue: "-"
+        },
+        {
+          parameter: "align",
+          explain: "flex 布局下的垂直排列方式",
+          dataTypes: "string",
+          optionalValues:
+            "top/middle/bottom",
+          defaultValue: "-"
+        }
+      ],
+      colApi: [
+        {
+          parameter: "span",
+          explain: "栅格占据的列数",
+          dataTypes: "number",
+          optionalValues:
+            "1-24",
+          defaultValue: "24"
+        },
+        {
+          parameter: "offset",
+          explain: "栅格左侧的偏移格数",
+          dataTypes: "number",
+          optionalValues:
+            "1-24",
+          defaultValue: "0"
+        },
+        {
+          parameter: "push",
+          explain: "栅格向右移动格数",
+          dataTypes: "number",
+          optionalValues:
+            "1-24",
+          defaultValue: "0"
+        },
+        {
+          parameter: "pull",
+          explain: "栅格向左移动格数",
+          dataTypes: "number",
+          optionalValues:
+            "1-24",
+          defaultValue: "0"
+        },
+        {
+          parameter: "xs",
+          explain: "<768px 栅格占据列数",
+          dataTypes: "number",
+          optionalValues:
+            "1-24",
+          defaultValue: "0"
+        },
+        {
+          parameter: "sm",
+          explain: "≥768px 栅格占据列数",
+          dataTypes: "number",
+          optionalValues:
+            "1-24",
+          defaultValue: "0"
+        },
+        {
+          parameter: "md",
+          explain: "≥992px 栅格占据列数",
+          dataTypes: "number",
+          optionalValues:
+            "1-24",
+          defaultValue: "0"
+        },
+        {
+          parameter: "lg",
+          explain: "≥1200px 栅格占据列数",
+          dataTypes: "number",
+          optionalValues:
+            "1-24",
+          defaultValue: "0"
+        },
+        {
+          parameter: "xl",
+          explain: "≥1920px 栅格占据列数",
+          dataTypes: "number",
+          optionalValues:
+            "1-24",
+          defaultValue: "0"
+        }
+      ]
     };
   }
 };
