@@ -30,7 +30,7 @@ export default {
     span: { // 栅格占据的列数
       type: Number,
       required: false,
-      default: 12
+      default: 24
     },
     offset: { // 栅格左侧的间隔
       type: Number,

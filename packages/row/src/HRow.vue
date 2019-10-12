@@ -29,11 +29,11 @@ export default {
       type: String,
       required: false
     },
-    justify: { // flex布局下的水平对齐方式
+    justify: { // flex布局下的水平对齐方式，start/end/center/space-around/space-between/space-evenly
       type: String,
       requird: false
     },
-    align: { // flex布局下的垂直对齐方式
+    align: { // flex布局下的垂直对齐方式，top/middle/bottom
       type: String,
       required: false
     }
