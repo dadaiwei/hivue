@@ -27,10 +27,10 @@ export default {
           time: "2019-09-04",
           contents: [
             {
-              description: "完成按钮组件"
+              description: "新增Button按钮组件"
             },
             {
-              description: "上传Icon demo"
+              description: "上传Icon图标及demo"
             }
           ]
         },
@@ -38,7 +38,15 @@ export default {
           time: "2019-10-11",
           contents: [
             {
-              description: "完成栅格布局组件"
+              description: "新增Grid栅格组件"
+            },
+          ]
+        },
+        {
+          time: "2019-10-17",
+          contents: [
+            {
+              description: "新增Layout布局组件"
             },
           ]
         }

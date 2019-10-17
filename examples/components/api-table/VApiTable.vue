@@ -33,7 +33,7 @@ export default {
           { label: "参数", name: "parameter", width: 200 },
           { label: "说明", name: "explain", width: 300 },
           { label: "类型", name: "dataTypes", width: 200 },
-          { label: "可选值", name: "optionalValues", width: 300 },
+          { label: "可选值", name: "optionalValues", width: 400 },
           { label: "默认值", name: "defaultValue" }
         ];
       }
