@@ -1,75 +1,78 @@
 {
-  "name": "hivue",
-  "version": "0.0.1",
-  "private": false,
-  "description": "A Component Library for vue.js",
-  "main": "lib/hivue.umd.min.js",
-  "scripts": {
-    "build": "vue-cli-service build",
-    "lib": "vue-cli-service build --target lib --name hivue --dest lib packages/index.js && npm run theme",
-    "lint": "vue-cli-service lint",
-    "serve": "vue-cli-service serve",
-    "theme": "gulp default"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:dadaiwei/hivue.git"
-  },
-  "homepage": "",
-  "keywords": [
-    "hivue",
-    "vue",
-    "components"
-  ],
-  "dependencies": {
-    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
-    "@vue/babel-preset-jsx": "^1.0.0",
-    "babel-plugin-component": "^1.1.1",
-    "chalk": "^2.4.2",
-    "core-js": "^2.6.5",
-    "del": "^4.1.1",
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.2.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-sass": "^4.0.2",
-    "vue": "^2.6.10",
-    "vue-highlightjs": "^1.3.3",
-    "vue-router": "^3.0.6"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.7.0",
-    "@vue/cli-plugin-eslint": "^3.7.0",
-    "@vue/cli-service": "^3.7.0",
-    "babel-eslint": "^10.0.1",
-    "babel-helper-vue-jsx-merge-props": "^2.0.3",
-    "babel-plugin-syntax-jsx": "^6.18.0",
-    "babel-plugin-transform-vue-jsx": "^3.7.0",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "highlight.js": "^9.15.9",
-    "node-sass": "^4.12.0",
-    "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.5.21"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
+    "name": "hivue",
+    "version": "0.0.1",
+    "private": false,
+    "description": "A Component Library for vue.js",
+    "main": "lib/hivue.umd.min.js",
+    "scripts": {
+        "build": "vue-cli-service build",
+        "lib": "vue-cli-service build --target lib --name hivue --dest lib packages/index.js && npm run theme",
+        "lint": "vue-cli-service lint",
+        "serve": "vue-cli-service serve",
+        "theme": "gulp default",
+        "deploy": "vue-cli-service build && node deploy/index.js"
     },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:dadaiwei/hivue.git"
+    },
+    "homepage": "",
+    "keywords": [
+        "hivue",
+        "vue",
+        "components"
     ],
-    "rules": {
-      "no-console": 0
+    "dependencies": {
+        "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
+        "@vue/babel-preset-jsx": "^1.0.0",
+        "babel-plugin-component": "^1.1.1",
+        "chalk": "^2.4.2",
+        "core-js": "^2.6.5",
+        "del": "^4.1.1",
+        "gulp": "^4.0.2",
+        "gulp-clean-css": "^4.2.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-sass": "^4.0.2",
+        "vue": "^2.6.10",
+        "vue-highlightjs": "^1.3.3",
+        "vue-router": "^3.0.6"
     },
-    "parserOptions": {
-      "parser": "babel-eslint"
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "^3.7.0",
+        "@vue/cli-plugin-eslint": "^3.7.0",
+        "@vue/cli-service": "^3.7.0",
+        "archiver": "^3.1.1",
+        "babel-eslint": "^10.0.1",
+        "babel-helper-vue-jsx-merge-props": "^2.0.3",
+        "babel-plugin-syntax-jsx": "^6.18.0",
+        "babel-plugin-transform-vue-jsx": "^3.7.0",
+        "eslint": "^5.16.0",
+        "eslint-plugin-vue": "^5.0.0",
+        "highlight.js": "^9.15.9",
+        "node-sass": "^4.12.0",
+        "node-ssh": "^6.0.0",
+        "sass-loader": "^7.1.0",
+        "vue-template-compiler": "^2.5.21"
+    },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/essential",
+            "eslint:recommended"
+        ],
+        "rules": {
+            "no-console": 0
+        },
+        "parserOptions": {
+            "parser": "babel-eslint"
+        }
+    },
+    "postcss": {
+        "plugins": {
+            "autoprefixer": {}
+        }
     }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  }
 }
