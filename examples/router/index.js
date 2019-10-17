@@ -40,7 +40,12 @@ export default new VueRouter({
         {
             path: '/components/grid',
             name: 'grid',
-            component: () => import('../views/components/layout/VGridDemo'),
+            component: () => import('../views/components/grid/VGridDemo'),
+        },
+        {
+            path: '/components/layout',
+            name: 'layout',
+            component: () => import('../views/components/layout/VLayoutDemo'),
         },
     ],
 });

@@ -2,7 +2,11 @@
   <table class="h-table-simple">
     <thead>
       <tr>
-        <th v-for="(item, index) in thead" :key="index">{{item.label}}</th>
+        <th
+          v-for="(item, index) in thead"
+          :key="index"
+          :style="{width: item.width + 'px'}"
+        >{{item.label}}</th>
       </tr>
     </thead>
     <tbody>
@@ -24,24 +28,24 @@ export default {
   props: {
     thead: {
       type: Array,
-      default: function() {
+      default: function () {
         return [
-          { label: "参数", name: "parameter" },
-          { label: "说明", name: "explain" },
-          { label: "类型", name: "dataTypes" },
-          { label: "可选值", name: "optionalValues" },
+          { label: "参数", name: "parameter", width: 200 },
+          { label: "说明", name: "explain", width: 300 },
+          { label: "类型", name: "dataTypes", width: 200 },
+          { label: "可选值", name: "optionalValues", width: 300 },
           { label: "默认值", name: "defaultValue" }
         ];
       }
     },
     data: {
       type: Array,
-      default: function() {
+      default: function () {
         return [];
       }
     }
   },
-  data() {
+  data () {
     return {};
   }
 };

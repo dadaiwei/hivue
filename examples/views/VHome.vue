@@ -4,7 +4,7 @@
  * @LastEditors: dadaiwei
  * @LastEditTime: 2019-08-09 10:10:03
  * @Description: 
- * @Copyright: 绿湾网络科技有限公司
+ 
  -->
 <template>
   <div class="home">

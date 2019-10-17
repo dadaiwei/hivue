@@ -4,7 +4,7 @@
  * @LastEditors: dadaiwei
  * @LastEditTime: 2019-08-09 10:43:43
  * @Description: 右边锚点组件
- * @Copyright: 绿湾网络科技有限公司
+ 
  -->
 <template>
   <div :class="['h-anchor', {'h-anchor-left': position == 'left'}]">
