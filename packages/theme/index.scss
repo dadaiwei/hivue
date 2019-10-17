@@ -10,6 +10,12 @@
 @import 'mixin/row';
 
 // component
-@import 'components/button';
+@import 'components/container';
+@import 'components/header';
+@import 'components/main';
+@import 'components/footer';
+@import 'components/aside';
 @import 'components/row';
 @import 'components/col';
+@import 'components/button';
+@import 'components/progress';

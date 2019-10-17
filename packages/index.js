@@ -1,9 +1,19 @@
-import HRow from './row/index'
-import HCol from './col/index'
-import HButton from './button/index'
-import HProgress from './progress/index'
+import HContainer from './components/container/index'
+import HHeader from './components/header/index'
+import HMain from './components/main/index'
+import HAside from './components/aside/index'
+import HFooter from './components/footer/index'
+import HRow from './components/row/index'
+import HCol from './components/col/index'
+import HButton from './components/button/index'
+import HProgress from './components/progress/index'
 
 const components = [
+  HContainer,
+  HHeader,
+  HMain,
+  HAside,
+  HFooter,
   HRow,
   HCol,
   HButton,
