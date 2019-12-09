@@ -11,23 +11,24 @@
     <slot name="progress"></slot>
     <div class="progress-bar">
       <div class="progress-outer-bar" :style="outerStyle">
-        <div class="progress-inner-bar"
+        <div
+          class="progress-inner-bar"
           :class="['progress-inner-bar-' + this.status,
                       {'progress-inner-bar-striped': striped,
                        'active': this.striped && this.active}]"
-          :style="innerStyle">
-        </div>
-        <div v-if="showText && textInside"
+          :style="innerStyle"
+        ></div>
+        <div
+          v-if="showText && textInside"
           class="inside-text"
-          :style="{'line-height': this.height + 'px'}">
-          {{percent}}
-        </div>
+          :style="{'line-height': this.height + 'px'}"
+        >{{percent}}</div>
       </div>
-       <div v-if="showText && !textInside"
-          class="outside-text"
-          :style="{'line-height': this.height + 'px'}">
-          {{percent}}
-        </div>
+      <div
+        v-if="showText && !textInside"
+        class="outside-text"
+        :style="{'line-height': this.height + 'px'}"
+      >{{percent}}</div>
     </div>
   </div>
 </template>
@@ -44,14 +45,14 @@ export default {
     textInside: { // 进度条显示文字是否内置在进度条内
       type: Boolean,
       required: false,
-      default: true
+      default: false
     },
     striped: { // 是否支持条纹效果
       type: Boolean,
       required: false,
       default: false
     },
-    active:  { // 是否支持动画效果
+    active: { // 是否支持动画效果
       type: Boolean,
       required: false,
       default: false
@@ -78,28 +79,28 @@ export default {
     }
   },
   computed: {
-    outerStyle() { // 外面进度条计算样式
+    outerStyle () { // 外面进度条计算样式
       const style = {
         width: Number.isInteger(this.width) ? `${this.width}px` : this.width,
         height: Number.isInteger(this.height) ? `${this.height}px` : this.height
       };
       return style;
     },
-    innerStyle() { // 内部进度条计算样式
+    innerStyle () { // 内部进度条计算样式
       const style = {
         height: `${this.height}px`
       };
       let width = 0;
       if (this.ratio && this.ratio >= 0 && this.ratio <= 1) {
         width = this.width * this.ratio;
-      } 
-      if(this.ratio > 1) {
+      }
+      if (this.ratio > 1) {
         width = this.width;
       }
       style.width = Number.isInteger(width) ? `${width}px` : width;
       return style;
     },
-    percent() { // 占比百分比，转换为%形势
+    percent () { // 占比百分比，转换为%形势
       return `${this.ratio * 100}%`;
     }
   }

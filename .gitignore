@@ -2,6 +2,7 @@
 node_modules
 dist
 lib/demo.html
+deploy
 
 # local env files
 .env.local
