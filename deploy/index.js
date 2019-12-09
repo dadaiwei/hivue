@@ -1,14 +1,15 @@
 const fs = require('fs')
 const node_ssh = require('node-ssh')
-const chalk = require('chalk')
 const archiver = require('archiver')
 const config = require('./config')
+const { infoLog, successLog, errorLog } = require('./utils')
 
 let ssh = new node_ssh()
 
 console.log('开始打包zip')
 startZip()
 
+// 开始打包
 function startZip() {
     const archive = archiver('zip', {
         zlib: { level: 9 },
@@ -20,8 +21,8 @@ function startZip() {
             console.log('关闭archiver异常:', err)
             return
         }
-        console.log(chalk.green('已生成zip包'))
-        console.log('开始上传dist.zip至服务器...')
+        successLog('zip打包成功')
+        infoLog(`开始连接${config.host}`)
         uploadFile()
     })
     archive.pipe(output)
@@ -29,35 +30,41 @@ function startZip() {
     archive.finalize()
 }
 
+// 上传文件
 function uploadFile() {
     ssh.connect(config)
         .then(() => {
-            console.log(chalk.green(`SSH connnect ${config.host} succeed`))
+            successLog(`SSH连接成功`)
             console.log('开始上传文件')
             ssh.putFile(`${__dirname}/dist.zip`, `${config.webDir}/dist.zip`)
                 .then(() => {
-                    console.log(chalk.green('上传文件成功'))
+                    successLog('上传文件成功')
                     console.log('开始执行远端脚本')
                     statrRemoteShell()
                 })
                 .catch(err => {
-                    console.log(chalk.red('文件传输异常', err))
+                    errorLog('文件传输异常', err)
                     process.exit(0)
                 })
         })
         .catch(err => {
-            console.log(chalk.red('连接失败', err))
+            errorLog('连接失败', err)
             process.exit(0)
         })
 }
 
+// 执行Linux命令
 function runCommand(command) {
     return new Promise((resolve, reject) => {
         ssh.execCommand(command, { cwd: config.webDir })
             .then(result => {
                 resolve()
-                console.log(chalk.blue(result.stdout))
-                console.log(chalk.red(result.stderr))
+                if (result.stdout) {
+                    successLog(result.stdout)
+                }
+                if (result.stderr) {
+                    errorLog(result.stderr)
+                }
             })
             .catch(err => {
                 reject(err)
@@ -65,6 +72,7 @@ function runCommand(command) {
     })
 }
 
+// 开始执行远程命令
 function statrRemoteShell() {
     const commands = [`cd ${config.webDir}`, 'pwd', 'unzip -o dist.zip && rm -f dist.zip']
     const promises = []
@@ -73,22 +81,23 @@ function statrRemoteShell() {
     }
     Promise.all(promises)
         .then(() => {
-            console.log(chalk.green('文件解压成功'))
+            successLog('文件解压成功')
             console.log('开始删除本地dist.zip')
             deleteLocalZip()
         })
         .catch(err => {
-            console.log(chalk.red('文件解压失败', err))
+            errorLog('文件解压失败', err)
             process.exit(0)
         })
 }
 
+// 删除本地dist.zip包
 function deleteLocalZip() {
     fs.unlink(`${__dirname}/dist.zip`, err => {
         if (err) {
-            console.log(chalk.red('本地dist.zip删除失败', err))
+            errorLog('本地dist.zip删除失败', err)
         }
-        console.log(chalk.green('本地dist.zip删除成功'))
+        successLog('本地dist.zip删除成功')
         process.exit(0)
     })
 }
