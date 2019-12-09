@@ -1,7 +1,7 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 
 export default new VueRouter({
     routes: [
@@ -30,12 +30,12 @@ export default new VueRouter({
         {
             path: '/components/button',
             name: 'button',
-            component: () => import('../views/components/commmon/VButtonDemo'),
+            component: () => import('../views/components/common/VButtonDemo'),
         },
         {
             path: '/components/icon',
             name: 'icon',
-            component: () => import('../views/components/commmon/Icon'),
+            component: () => import('../views/components/common/Icon'),
         },
         {
             path: '/components/grid',
@@ -47,5 +47,10 @@ export default new VueRouter({
             name: 'layout',
             component: () => import('../views/components/layout/VLayoutDemo'),
         },
+        {
+            path: '/components/progress',
+            name: 'progress',
+            component: () => import('../views/components/data/VProgressDemo'),
+        },
     ],
-});
+})

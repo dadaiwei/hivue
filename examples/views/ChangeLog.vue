@@ -49,6 +49,14 @@ export default {
               description: "新增Layout布局组件"
             },
           ]
+        },
+        {
+          time: "2019-12-09",
+          contents: [
+            {
+              description: "新增Progress进度条组件"
+            },
+          ]
         }
       ]
     };

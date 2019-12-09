@@ -46,7 +46,7 @@ export default {
       default: 100
     }
   },
-  data() {
+  data () {
     return {
       data: "",
       hover_animation: false,
@@ -54,7 +54,7 @@ export default {
     };
   },
   methods: {
-    showCode() {
+    showCode () {
       if (this.code_height === 0) {
         this.code_height = this.height;
       } else {
@@ -85,6 +85,11 @@ export default {
     &:hover {
       box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6),
         0 2px 4px 0 rgba(232, 237, 250, 0.5);
+    }
+    .introduction {
+      font-size: 13px;
+      color: #5e6d82;
+      margin: 10px 0;
     }
     .source {
       padding: 24px;
